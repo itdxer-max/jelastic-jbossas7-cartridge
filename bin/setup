@@ -9,9 +9,9 @@ mv /usr/java/latest/bin/server.keystore ${OPENSHIFT_JBOSSAS_DIR}/versions/${Vers
 chown jelastic:jelastic ${OPENSHIFT_JBOSSAS_DIR}/versions/${Version}/standalone/configuration/server.keystore;
 sed -i s/theremustbethesslcertpass/$keypass/ ${OPENSHIFT_JBOSSAS_DIR}/versions/${Version}/standalone/configuration/standalone.xml
 
-if [ -d "${OPENSHIFT_JBOSSAS_DIR}/.ssh" ] ; then
-    mv ${OPENSHIFT_JBOSSAS_DIR}/.ssh ${OPENSHIFT_JBOSSAS_DIR}/home/
-fi
+#if [ -d "${OPENSHIFT_JBOSSAS_DIR}/.ssh" ] ; then
+#    mv ${OPENSHIFT_JBOSSAS_DIR}/.ssh ${OPENSHIFT_JBOSSAS_DIR}/home/
+#fi
 
 [ -f "${OPENSHIFT_JBOSSAS_DIR}/.bash_profile" ] && cp ${OPENSHIFT_JBOSSAS_DIR}/.bash_profile ${OPENSHIFT_JBOSSAS_DIR}/home/ ;
 [ -f "${OPENSHIFT_JBOSSAS_DIR}/.bash_history" ] && cp ${OPENSHIFT_JBOSSAS_DIR}/.bash_history ${OPENSHIFT_JBOSSAS_DIR}/home/ ;
