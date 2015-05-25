@@ -13,6 +13,8 @@ sed -i s/theremustbethesslcertpass/$keypass/ ${OPENSHIFT_JBOSSAS_DIR}/versions/$
 #    mv ${OPENSHIFT_JBOSSAS_DIR}/.ssh ${OPENSHIFT_JBOSSAS_DIR}/home/
 #fi
 
+sed -i 's/opt\/repo:\/bin\/bash/opt\/repo\/home:\/bin\/bash/g' "/etc/passwd"
+
 [ -f "${OPENSHIFT_JBOSSAS_DIR}/.bash_profile" ] && cp ${OPENSHIFT_JBOSSAS_DIR}/.bash_profile ${OPENSHIFT_JBOSSAS_DIR}/home/ ;
 [ -f "${OPENSHIFT_JBOSSAS_DIR}/.bash_history" ] && cp ${OPENSHIFT_JBOSSAS_DIR}/.bash_history ${OPENSHIFT_JBOSSAS_DIR}/home/ ;
 [ -f "${OPENSHIFT_JBOSSAS_DIR}/.profile" ] && cp ${OPENSHIFT_JBOSSAS_DIR}/.profile ${OPENSHIFT_JBOSSAS_DIR}/home/ ;
@@ -23,7 +25,5 @@ sed -i s/theremustbethesslcertpass/$keypass/ ${OPENSHIFT_JBOSSAS_DIR}/versions/$
 service iptables save
 
 mkdir ${OPENSHIFT_JBOSSAS_DIR}/pid ${OPENSHIFT_JBOSSAS_DIR}/logs;
-
-sed -i 's/opt\/repo:\/bin\/bash/opt\/repo\/home:\/bin\/bash/g' "/etc/passwd"
 
 [ -f ${OPENSHIFT_HOMEDIR}/.jboss-cli-history ] || touch ${OPENSHIFT_HOMEDIR}/.jboss-cli-history
