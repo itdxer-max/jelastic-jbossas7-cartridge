@@ -24,6 +24,4 @@ fi
 /sbin/iptables -t nat -I PREROUTING -p tcp -m tcp --dport 443 -j REDIRECT --to-ports 8443
 service iptables save
 
-mkdir ${OPENSHIFT_JBOSSAS_DIR}/pid ${OPENSHIFT_JBOSSAS_DIR}/logs;
-
 [ -f ${OPENSHIFT_HOMEDIR}/.jboss-cli-history ] || touch ${OPENSHIFT_HOMEDIR}/.jboss-cli-history
