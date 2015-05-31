@@ -8,8 +8,6 @@ JBOSSAS_PID_FILE=${OPENSHIFT_JBOSSAS_PID_DIR}/jbossas.pid
 JBOSSAS_DEPLOYMENTS_DIR=${OPENSHIFT_JBOSSAS_DIR}/standalone/deployments
 SCANCONFIG=""
 
-source ${OPENSHIFT_JBOSSAS_DIR}/bin/util
-
 cartridge_type="jbossas"
 
 # Return the deployment-scanner configuration
