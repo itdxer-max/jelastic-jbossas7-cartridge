@@ -2,6 +2,8 @@
 
 source /etc/jelastic/environment;
 
+[ -e /run/cartridges/jbossas.pid ] && rm -f /run/cartridges/jbossas.pid;
+
 if [ ! -e ${OPENSHIFT_JBOSSAS_DIR}/versions/${Version}/standalone/configuration/server.keystore ]
 then
 cd /usr/java/latest/bin;
